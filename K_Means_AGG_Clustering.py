@@ -42,8 +42,7 @@ class K_means:
 
   def fit(self,X):
     self.centroids = self.init_centroids(X)
-
-    i  =1
+    i = 1
     not_convergent = True
     while not_convergent and (i < self.max_iter):
       current_labels = self.closest_centroids(X)
