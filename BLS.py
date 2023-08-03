@@ -7,13 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1NQ8y_uFOuekKX01uKHi-nb934Fs7wGlL
 """
 
-
-
 import numpy as np
 import pandas as pd
-import sklearn
 import matplotlib.pyplot as plt
-
 
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -43,16 +39,13 @@ class BLS:
 a = BLS()
 a.train(x_test,y_test)
 pred = a.fit(x_test)
+accuracy = accuracy_score(y_test, pred)
 print(accuracy_score(y_test,pred))
 
-len(x_test),len(y_train)
 
 target_names = iris.target_names
 
-# Create scatter plots for two pairs of features
 plt.figure(figsize=(12, 6))
-
-# Scatter plot for sepal length vs sepal width
 plt.subplot(1, 2, 1)
 for target, target_name in enumerate(target_names):
     plt.scatter(X[y == target, 0], X[y == target, 1], label=target_name)
@@ -61,29 +54,4 @@ plt.ylabel('Sepal Width (cm)')
 plt.title('Sepal Length vs Sepal Width')
 plt.legend()
 
-import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.svm import
-from sklearn.metrics import accuracy_score
 
-# Load the Iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Create a LinearSVC model
-model = b
-
-# Train the model on the training data
-model.fit(X_train, y_train)
-
-# Make predictions on the test data
-predictions = model.predict(X_test)
-
-# Calculate the accuracy of the model
-accuracy = accuracy_score(y_test, predictions)
-print("Accuracy:", accuracy)
